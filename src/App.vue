@@ -10,9 +10,8 @@ const isModalOpen = ref(false)
  <h1>モーダル練習アプリ</h1>
  <button @click="isModalOpen = true">モーダルを開く</button>
 <transition name="scale">
- <ModalWindow v-if="isModalOpen" @close="isModalOpen = false" />
+ <ModalWindow v-if="isModalOpen" @close="isModalOpen = false" title="注意!"/>
 </transition>
-
  </div>
 </template>
 

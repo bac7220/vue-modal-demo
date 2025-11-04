@@ -1,10 +1,14 @@
 <script setup>
 const emit = defineEmits(['close'])
+const props = defineProps({
+  title:String
+})
 </script>
 
 <template>
   <div class="wrapper" @click.self="emit('close')">
     <div class="modal">
+      <h2>{{ title }}</h2>
     <p>モーダルウィンドウのコンポーネントです！</p>
      <button @click="emit('close')">モーダルを閉じる</button>
     </div>
