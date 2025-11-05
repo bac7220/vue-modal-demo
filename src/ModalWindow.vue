@@ -9,8 +9,13 @@ const props = defineProps({
   <div class="wrapper" @click.self="emit('close')">
     <div class="modal">
       <h2>{{ title }}</h2>
-    <p>モーダルウィンドウのコンポーネントです！</p>
-     <button @click="emit('close')">モーダルを閉じる</button>
+      <slot name="title">
+        <button @click="emit('close')">×</button>
+      </slot>
+      <p>モーダルウィンドウのコンポーネントです！</p>
+      <slot></slot>
+     <button @click="emit('close')">モーダルを閉じる
+     </button>
     </div>
   </div>
 </template>
