@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import ModalWindow from './ModalWindow.vue'
-import InfoModal from './InfoModal.vue'
+import ModalWindow from './components/modals/ModalWindow.vue'
+import InfoModal from './components/modals/InfoModal.vue'
 
 const isModalOpen = ref(false) 
 const infoModalOpen =ref(false)
@@ -21,7 +21,7 @@ const infoModalOpen =ref(false)
 <button>いいえ</button>
  </ModalWindow>
 </transition>
-<InfoModal v-if="infoModalOpen" @close="infoModalOpen = false" />
+<InfoModal v-if="infoModalOpen" @close="infoModalOpen = false" message="このモーダルは情報用です"/>
 
  </div>
 </template>
