@@ -1,14 +1,17 @@
 <script setup>
 import { ref } from 'vue'
 import ModalWindow from './ModalWindow.vue'
+import InfoModal from './InfoModal.vue'
 
 const isModalOpen = ref(false) 
+const infoModalOpen =ref(false)
 </script>
 
 <template>
  <div>
  <h1>モーダル練習アプリ</h1>
  <button @click="isModalOpen = true">モーダルを開く</button>
+ <button @click="infoModalOpen = true">infoモーダルを開く</button>
 <transition name="scale">
  <ModalWindow v-if="isModalOpen" @close="isModalOpen = false" title="注意!">
   <template #title >
@@ -18,6 +21,8 @@ const isModalOpen = ref(false)
 <button>いいえ</button>
  </ModalWindow>
 </transition>
+<InfoModal v-if="infoModalOpen" @close="infoModalOpen = false" />
+
  </div>
 </template>
 
